@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&family=Nunito+Sans:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap');
 
+:root {
+  --dark-bg-color : hsl(207,26%,17%);
+  --article-color : hsl(209,23%,22%);
+  --text-color : hsl(0,0%,100%);
+  --light-mode-text:hsl(200,15%,8%);
+  --light-mode-input:hsl(0,0%,52%);
+  --light-mode-background:hsl(0,0%,98%)
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -29,13 +38,22 @@ body {
   box-shadow: 0px 10px 10px rgba(9, 17, 22, 0.5);
 }
 
+.theme-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .theme-header h3 {
+  margin-left: 10px;
+}
 /*Filter*/
 
 .filter {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 60px;
+  
 }
 
 input {
@@ -54,7 +72,7 @@ input {
 }
 
 input::placeholder {
-  color: #EAF6F6;
+  color: rgb(214 211 209);
   font-family: inherit;
 }
 
@@ -73,9 +91,6 @@ select {
   border-radius: 5px;
 }
 
-option {
-  border-radius: 5px;
-}
 
 /*body*/
 
@@ -84,6 +99,12 @@ option {
   background-color: #2b3743;
   border-radius: 0px 0px 5px 5px;
   box-shadow: 0px 10px 10px rgba(9, 17, 22, 0.5);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  transition: 0.4s;
 }
 
 .details {
@@ -99,6 +120,7 @@ option {
 
 .details h5 span {
   font-weight: 300;
+  color:rgb(214 211 209);
 }
 .grid article img {
   border-radius: 5px 5px 0px 0px;
@@ -112,14 +134,107 @@ option {
   gap: 40px;
 }
 
-@media (max-width:640px) {
+.back-btn Link {
+  text-decoration: none;
+  outline: none;
+  
+}
 
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 60px;
+  margin-top: 60px;
+  width: 100px;
+  height: 40px;
+  background-color: var(--article-color);
+  border-radius: 5px;
+  box-shadow: 0px 10px 10px rgba(9, 17, 22, 0.5);
+}
+
+
+
+.details-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  
+}
+
+.details-container div {
+  margin-right: 100px;
+}
+
+.details-container div h2 {
+  margin-bottom: 25px;
+}
+
+.details-container div h4 {
+  margin-bottom: 4px;
+}
+
+.details-container div h4 span {
+  font-weight:200;
+  color: rgb(214 211 209);;
+}
+
+.details-container div img {
+  width: 340px;
+  height: 172px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(9, 17, 22, 0.5);
+}
+
+
+
+
+
+/*Pagination */
+
+.pagenation-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.pagenation-container h5 {
+  width: 50px;
+  height: 50px;
+  background-color: aqua;
+}
+
+
+
+
+
+
+/*responsivenss*/
+
+@media (max-width:640px) {
+  .header {
+    margin-bottom: 50px;
+  }
+
+  .header h2 {
+    font-size: medium;
+  }
+  .header h3 {
+    font-size: medium;
+  }
   .filter {
     flex-direction: column;
+    margin-bottom: 50px;
   }
   .filter input {
     margin-bottom: 50px;
   }
+  .filter input::placeholder {
+    font-size: medium;
+  }
+
   .grid {
     grid-template-columns: repeat(1, 1fr);
     place-items: center;
@@ -136,6 +251,35 @@ option {
     height: 200px;
   }
 
+  .details-container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+   
+  }
+
+  .details-container div img {
+    width: 300px;
+    height: 250px;
+  }
+  .details-container div {
+    margin-bottom: 50px;
+    margin-left: 50px;
+  }
+
+  .back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
+    margin-top: 60px;
+    width: 100px;
+    height: 40px;
+    background-color: var(--article-color);
+    border-radius: 5px;
+    box-shadow: 0px 10px 10px rgba(9, 17, 22, 0.5);
+  }
+  
 
 }
 
@@ -144,13 +288,20 @@ option {
     flex-direction: column;
   }
   .filter input {
-    margin-bottom: 50px;
+   margin-bottom: 30px;
+   margin-top: 35px;
+  }
+
+  .select {
+    margin-bottom: 30px;
   }
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
   }
+
+  
 }
 
 @media (min-width:1250px) {
@@ -159,6 +310,7 @@ option {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
     margin: 60px;
   }
 
@@ -168,6 +320,11 @@ option {
     padding-left: 50px;
     padding-right: 50px;
   }
+
+  .details-container div {
+    margin-bottom: 50px;
+  }
 }
+
 
 

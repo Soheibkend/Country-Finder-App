@@ -1,53 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from "react";
+import Card from "./Card";
 
-const url = 'https://restcountries.com/v3.1/all';
+const Countries = ({countries})=> {
 
-function Countries() {
-
-    const [countries, setCountries] = useState([]);
-
-    const fetchCountriesData = async () => {
-        const response = await fetch (url);
-        const countries = await response.json();
-        setCountries(countries);
-        console.log (countries);
-    }
-
-    useEffect (()=>{
-        fetchCountriesData();
-    },[])
-
-  return (
-    <div >
-        
-        <section className='grid'>
-            {
+    return(
+        <>
+        {
             countries.map ((country)=> {
                 const {name, population, region, capital, flags} = country;
                 return (
-
-                    <article key = {country.flag}>
-                    <div className='card'>
-                        <img src={flags.png} alt={name}></img>
-                        <div className='details'>
-                           <h3>{name.common}</h3>
-                           <h5>Population : <span>{population}</span></h5>
-                           <h5>Region : <span>{region}</span></h5>
-                           <h5>Capital : <span>{capital}</span></h5>
-                        </div>
-                        
-                    </div>
-
-                    </article>
-                    
+                  <Card key={flags.svg} name={name} population={population} region={region} capital={capital} flags={flags} />  
                 );
             })
-            }
-        </section>
-
-        
-    </div>
-  )
+        }
+        </>
+    );
 }
 
 export default Countries;
