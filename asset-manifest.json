@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.ef384dc3.css",
-    "main.js": "/static/js/main.6118e1e3.js",
-    "index.html": "/index.html",
-    "main.ef384dc3.css.map": "/static/css/main.ef384dc3.css.map",
-    "main.6118e1e3.js.map": "/static/js/main.6118e1e3.js.map"
+    "main.css": "/Country-Finder-App/static/css/main.ef384dc3.css",
+    "main.js": "/Country-Finder-App/static/js/main.6118e1e3.js",
+    "index.html": "/Country-Finder-App/index.html",
+    "main.ef384dc3.css.map": "/Country-Finder-App/static/css/main.ef384dc3.css.map",
+    "main.6118e1e3.js.map": "/Country-Finder-App/static/js/main.6118e1e3.js.map"
   },
   "entrypoints": [
     "static/css/main.ef384dc3.css",
