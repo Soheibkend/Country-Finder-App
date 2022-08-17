@@ -9,8 +9,8 @@ const Header = ()=> {
             </div>
 
             <div className='theme-header'>
-                <i className="icon fa-solid fa-moon"></i>
-                <h3>Dark Mode</h3>
+                
+                <h3>By Soheib Kend</h3>
             </div>
         </header>
     );

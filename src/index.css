@@ -261,6 +261,7 @@ select {
   .details-container div img {
     width: 300px;
     height: 250px;
+    box-shadow: none;
   }
   .details-container div {
     margin-bottom: 50px;
@@ -300,6 +301,8 @@ select {
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
   }
+
+  
 
   
 }
